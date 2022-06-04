@@ -15,4 +15,7 @@ update:
 	@git push
 
 new:
-	@./new.sh
+	@touch $(shell ./new.sh)
+
+now:
+	@vim $(shell ./new.sh)

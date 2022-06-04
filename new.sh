@@ -10,9 +10,10 @@ fmt='+%Y-%m-%d'
 start='1642348801'
 mon=`date -vmon +%s`
 weekNum=`expr \( $mon - $start \) \/ 604800 + 1`
-
+weekNum=`printf "%04d" $weekNum`
 ws=`date -vmon +%Y.%m.%d`
 we=`date -vmon -v+6d +%m.%d`
 name=${weekNum}.${ws}-${we}.md
-echo '' >> $name
-echo create $name
+echo $name
+# echo '' >> $name
+# echo create $name
